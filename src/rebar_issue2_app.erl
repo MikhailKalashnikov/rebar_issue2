@@ -7,6 +7,8 @@
 
 -behaviour(application).
 
+-include_lib("rebar_issue1/include/rebar_issue1.hrl").
+
 %% Application callbacks
 -export([start/2, stop/1]).
 
@@ -15,6 +17,7 @@
 %%====================================================================
 
 start(_StartType, _StartArgs) ->
+	_T = ?TEST,
     rebar_issue2_sup:start_link().
 
 %%--------------------------------------------------------------------
